@@ -1,0 +1,36 @@
+import turtle
+win = turtle.Screen()
+win.title("Hyder's Ping Pong Game")
+win.bgcolor("black")
+win.setup(width=800, height=600)
+win.tracer(0)#Stops the window to automatically update, Speed up game a bit
+#Paddle A
+paddle_a=turtle.Turtle()
+paddle_a.speed(0)
+paddle_a.shape("square")
+paddle_a.color("white")
+paddle_a.shapesize(stretch_wid=5, stretch_len=1)
+paddle_a.penup()
+paddle_a.goto(-350,0)
+
+
+
+
+#Function
+
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+def paddle_a_down():
+    y = paddle_a.ycor()
+    y -= 20
+    paddle_a.sety(y)
+
+#Keyboard Binding
+win.listen()
+win.onkeypress(paddle_a_up, "w")
+win.onkeypress(paddle_a_down, "s")
+win.onkeypress(paddle_b_up, "Up")
+win.onkeypress(paddle_b_down, "Down")
